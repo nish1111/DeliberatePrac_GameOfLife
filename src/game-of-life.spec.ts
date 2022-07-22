@@ -10,7 +10,7 @@ test('given grid with no living cells, should return', () => {
         [0, 0, 0]
     ];
     let result = sut.play(grid);
-
+    //assert
     expect(result).toBe([
         [0, 0, 0],
         [0, 0, 0],
