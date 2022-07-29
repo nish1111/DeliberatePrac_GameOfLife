@@ -1,14 +1,16 @@
 export class GameOfLife {
 
     play(grid: number[][]) {
-        const initialRow = grid
+        let row = grid[0]
 
+        return [row.map((cell, index) => {
+            let previous = row[index - 1] ?? 0
+            let next = row[index + 1]
 
-        const previous = initialRow[0][0]
-        const next = initialRow[0][2]
-        if (previous === 0 && next === 0) {
-            return [[0, 0, 0]]
-        }
-        return initialRow
+            if (previous === 1 && next === 1) {
+                return 1
+            }
+            return 0;
+        })]
     }
 }
